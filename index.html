@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debounce</title>
+    <style>
+        /* *{
+            font-family: sans-serif;
+
+        }
+        #input{
+            padding: 10px;
+            width: 400px;
+
+        } */
+        body{
+            height: 90vh;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+
+        .spinner{
+            width: 60px;
+            height: 60px;
+            position: relative;
+            
+        }
+
+        .spinner span{
+            position: absolute;
+            display: flex;
+            inset: 0;
+            justify-content: center;
+            animation: animate 1800ms infinite;
+            animation-delay: calc(120ms * var(--i));
+        }
+
+        .spinner span::after{
+            content: '';
+            width: 7px;  
+            height: 7px;
+            border-radius: 50%;
+            /* background: #0cb4e7; */
+            background: green;
+        }
+
+        
+
+        @keyframes animate{
+            from{
+                transform: rotate(0deg);
+            }  
+            to{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- <input type="text" id="input" placeholder="Search"> -->
+    <div class="spinner">
+        <span style="--i:1"></span>
+        <span style="--i:2"></span>
+        <span style="--i:3"></span>
+        <span style="--i:4"></span>
+        <span style="--i:5"></span>
+        <span style="--i:6"></span>
+        <span style="--i:7"></span>
+    </div>
+    <script src="debounce.js"></script>
+</body>
+</html>
